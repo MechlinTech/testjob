@@ -72,9 +72,8 @@ class SupportController extends Controller
       $messages->message = $message_data;  
       $messages->save();  
     }
-
-    $data = array('name'=>"You are notify to check ur message status");
-    Auth::user()->notify(new MessageReply);
+    $user = User::find($data->user_id);
+    $user->notify(new MessageReply);
     $result['sucess'] = 'Support Comment/Status Added';
 
     } catch (\Exception $e) {

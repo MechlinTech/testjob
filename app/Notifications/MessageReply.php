@@ -41,7 +41,7 @@ class MessageReply extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('You have got reply on Your support ticket')
+                    ->line('Your support ticket status is changed please check application.')
                     ->line('Thank you for using our application!');
     }
 
